@@ -1,0 +1,95 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <!--Refereciando o arquivo de css style.css-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>TCC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- First include jquery js -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <!--Teste apenas, sem os itens do Formulário -->
+    <script type="text/JavaScript">
+        $(document).ready(function(){
+            $('#login').click(function (e) {
+                $.post({
+                    type: 'POST',
+                    url: 'http://localhost:3000/produto',
+                    dataType: 'json', 
+                    data: { foo : 'bar', bar : 'foo' },
+                    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+                    success: function(data) {
+                        alert(data)
+                    },
+                    error: function(){
+                        alert('Nozora')
+                    }
+                }).done(function(result){
+                        alert(result)
+                }).fail(function(jqXHR,textStatus,errorThrown){
+                        alert(errorThrown);
+                });
+                e.preventDefault(); //STOP default action
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <!--Div para o Nome ou logo-->
+        <div class="jumbotron" style="background-color: rgba(255,255,255,0.0)">
+            <!--H1 para destacar o nome, na parte superior esqueda da tela-->
+            <h1 style="color: white">Mudanças Já</h1>
+
+            <!--Um pequeno parágrafo para descrever o site em poucas palavras-->
+            <p style="color: white">Solução para as suas Mudanças</p>
+        </div>
+
+        <!--div para o Login-->  
+        <div class="login">
+            <!--Iniciando formulário-->
+            <form class="form-horizontal" id="myform">
+                <div class="form-group">
+                    <!--Label para Email, no lado esquerdo da TextBox-->
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <!--Caixa de texto para digitar o email-->
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="idUser">
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <!--Label para Password, no lado esquerdo da TextBox-->
+                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <!--Caixa de texto para digitar a senha com o type password onde mascara o que foi digitado-->
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="passwd">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <!--Botão de Sign In onde será enviado as informações de login e senha para validação-->
+                        <button type="submit" id="login" class="btn btn-default">Sign in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

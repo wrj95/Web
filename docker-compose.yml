@@ -1,0 +1,10 @@
+front:
+
+  image: tutum/apache-php
+  
+  container_name: pages
+  
+  volumes:
+    - $PWD:/app
+  ports:
+    - "8000:80"

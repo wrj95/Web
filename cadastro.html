@@ -1,0 +1,164 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Menu Superior-->
+    <nav class="navbar navbar-inverse">
+            <!--Irá ocupar 2 colunas-->
+            <div class="col-md-2">
+                <!--Link para Home-->
+                <h3 style="color: white">Home</h3>
+            </div>
+
+            <!--Irá ocupar 2 colunas-->
+            <div class="col-md-2">
+                <!--Link para ...-->
+                <h3 style="color: white">Nozora</h3>
+            </div>
+    </nav>
+
+
+    <div class="container" style="background-color: gold">
+        <form class="form-horizontal" action="localhost:3000/">
+        <div class="row">
+
+
+            <!--Nome-->
+            <!--Irá ocupar 5 colunas-->
+            <div class="col-md-5">
+                <div class="form-group">
+                    <div class="col-md-8">
+                    <!--Div para o nome ficar em cima da caixa de texto-->
+                    Nome:
+                    </div>
+                    <div class="col-md-12">
+                        <!--Caixa de Texto para Nome-->
+                        <input  type="text" class="form-control" id="name" placeholder="Nome">
+                    </div>
+                </div> 
+            </div>
+        
+            <!--SobreNome-->
+            <!--Irá ocupar 4 colunas-->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="col-md-8">
+                    <!--Div para o Sobrenome ficar em cima da caixa de texto-->
+                    Sobrenome:
+                    </div>
+                    <div class="col-md-12">
+                        <!--Caixa de Texto para Sobrenome-->
+                        <input type="text" class="form-control" id="sobName" placeholder="Sobrenome">
+                    </div>                               
+                </div>
+            </div>
+
+
+            <!--Sexo-->
+            <!--Irá ocupar 3 colunas-->
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="col-md-8">
+                    <!--Div para o Sexo ficar em cima da radio-->
+                    Sexo:
+                    </div>
+                    <div class="col-md-12">
+                        <!--radio é uma caixa de seleção onde só pode ser escolhido apenas UM dos itens correspondentes
+                        que no caso é o Sexo do usuário ou prestador-->
+                        <input type="radio" name="sex" value="male"> Masculino
+                        <input type="radio" name="sex" value="female"> Feminino
+                    </div>
+                </div> 
+            </div>          
+            
+            <!--CPF/CNPJ-->
+            <!--Irá ocupar 4 colunas-->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="col-md-8">
+                    <!--Div para o CPF ou CNPJ ficar em cima da caixa de texto-->
+                    CPF/CNPJ:
+                    </div>
+                    <div class="col-md-12">
+                        <!--Caixa de Texto para CPF/CNPJ-->
+                        <input  type="text" class="form-control" id="cpfCnpj" placeholder="CPF/CNPJ">
+                    </div>
+                </div> 
+            </div>
+
+
+            <!--Telefone-->
+            <!--Irá ocupar 4 colunas-->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <!--Div para o Telefone ficar em cima da caixa de texto-->
+                    Telefone:
+                    </div>
+                    <div class="col-md-12">
+                        <input  type="text" class="form-control" id="tel" placeholder="Telefone">
+                    </div>
+                </div> 
+            </div>
+
+            <!--Celular-->
+            <!--Irá ocupar 4 colunas-->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="col-md-8">
+                    <!--Div para o Celular ficar em cima da caixa de texto-->
+                    Celular:
+                    </div>
+                    <div class="col-md-12">
+                        <!--Caixa de Texto para Celular-->
+                        <input  type="text" class="form-control" id="cel" placeholder="Celular">
+                    </div>
+                </div> 
+            </div>
+
+            <!--Endereco-->
+            <!--Irá ocupar 4 colunas-->
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="col-md-8">
+                    <!--Div para o Endereço ficar em cima da caixa de texto-->
+                    Endereço:
+                    </div>
+                    <div class="col-md-12">
+                        <!--Caixa de Texto para Endereco-->
+                        <input  type="text" class="form-control" id="end" placeholder="Endereço">
+                    </div>
+                </div> 
+            </div>
+
+            <!--Numero-->
+            <!--Irá ocupar 2 colunas-->
+            <div class="col-md-2">
+                <div class="form-group">
+                    <div class="col-md-8">
+                    <!--Div para o Numero da Residencia ficar em cima da caixa de texto-->
+                    Nº:
+                    </div>
+                    <div class="col-md-12">
+                        <!--Caixa de Texto para Numero-->
+                        <input  type="text" class="form-control" id="num" placeholder="">
+                    </div>
+                </div> 
+            </div>
+
+        </div>
+        </form>
+
+    </div>
+</body>
+</html>
