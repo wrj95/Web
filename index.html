@@ -19,31 +19,37 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
-    <!-- JQuery -->
+    <!-- Refenciando o JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-     <!--Teste apenas, sem os itens do Formulário -->
+     <!-- Iniciando as tarefas com o JQuery -->
     <script type="text/JavaScript">
         $(document).ready(function(){
-            $('#login').click(function (e) {
+            $('#login').click(function (e) { //Quando o botao do formulario e acionado
+
+                //Aqui pega o formulário e o converte em JSON
+                var json = JSON.parse(JSON.stringify(jQuery('#myform').serializeArray()));
+
+                //Abro uma conexão com o outro servidor, do tipo Post, passo a URL da API, 
                 $.post({
-                    type: 'POST',
-                    url: 'http://localhost:3000/produto',
-                    dataType: 'json', 
-                    data: { foo : 'bar', bar : 'foo' },
-                    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+                    type: 'POST', //Tipo de Conexao
+                    url: 'http://localhost:3000/produto', //URL da API
+                    dataType: 'json', //Tipo de dado que sera transferido
+                    data: json, //Enviando o formulario em formato JSON
+                    contentType: 'application/x-www-form-urlencoded;charset=UTF-8', //Envio em URLEncoded
                     success: function(data) {
-                        alert(data)
+                        //??
                     },
                     error: function(){
-                        alert('Nozora')
+                        alert('Erro')
                     }
                 }).done(function(result){
-                        alert(result)
+                        //Aqui será tratada à resposta do Servidor
                 }).fail(function(jqXHR,textStatus,errorThrown){
-                        alert(errorThrown);
+                        //alert(errorThrown);
+                        //Aqui será mostrado o erro que retornará do Servidor
                 });
-                e.preventDefault(); //STOP default action
+                e.preventDefault();
             });
         })
     </script>
