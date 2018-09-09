@@ -33,8 +33,10 @@
     <script type="text/JavaScript">
         $(document).ready(function(){
             $('#dataNascimento').mask("99/99/9999"); //Tratando o Data
+            $('#tel').mask("(99)9999-9999"); //Tratando Numero de Telefone
+            $('#cel').mask("(99)99999-9999"); //Tratando Numero de Celular
 
-            $('#login').click(function (e) { //Quando o botao do formulario e acionado
+            $('#cadastrar').click(function (e) { //Quando o botao do formulario e acionado
                 $('#myform').validate({ //Validação dos campos do formulário
                     rules: { //Regras de Validacao
                         name:{required: true}, //Nao aceita o campo Nome vazio
@@ -137,7 +139,6 @@
                 </div>
             </div>
 
-
             <!--Sexo-->
             <!--Irá ocupar 3 colunas-->
             <div class="col-md-3">
@@ -194,7 +195,7 @@
                     </div>
                     <div class="col-md-12">
                         <!--Caixa de Texto para Celular-->
-                        <input  type="text" class="form-control" id="cel" placeholder="Celular">
+                        <input  type="text" class="form-control" name="cel" id="cel" placeholder="Celular">
                     </div>
                 </div> 
             </div>
@@ -342,8 +343,11 @@
         
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <!--Botão de Sign In onde será enviado as informações de login e senha para validação-->
-                <button type="submit" id="login" class="btn btn-default">Sign in</button>
+                <!--Botao de Cadastrar onde será enviado as informações de Cadastro para validação-->
+                <button type="submit" name="cadastrar" id="cadastrar" class="btn btn-default">Cadastrar</button>
+
+                <!--Botao para Cancelar o Cadastro-->
+                <button type="submit" name="cancelar" id="cancelar" class="btn btn-default">Cancelar</button>
             </div>
         </div>
         
