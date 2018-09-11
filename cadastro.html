@@ -27,7 +27,7 @@
     
     <!--JQuery Mask Plugin-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
     <!-- Iniciando as tarefas com o JQuery -->
     <script type="text/JavaScript">
@@ -50,7 +50,9 @@
                         email:{required: true}, //Nao aceita o campo Email vazio
                         emailAlt:{required: true}, //Nao aceita o campo Email Alternativo vazio
                         passwd:{required: true}, //Nao aceita o campo Senha do Endereco vazio
-                        passwdConfirm:{required: true} //Nao aceita o campo Confirmacao de Senha do Endereco vazio
+                        passwdConfirm:{required: true}, //Nao aceita o campo Confirmacao de Senha do Endereco vazio
+                        dataNascimento:{required: true,
+                                        date: true}
                     },
                     messages: {
                         name:{required: 'Campo Obrigatório'},
@@ -64,7 +66,8 @@
                         email:{required: 'Campo Obrigatório'},
                         emailAlt:{required: 'Campo Obrigatório'},
                         passwd:{required: 'Campo Obrigatório'},
-                        passwdConfirm:{required: 'Campo Obrigatório'}
+                        passwdConfirm:{required: 'Campo Obrigatório'},
+                        dataNascimento:{required: 'Campo Obrigatório'}
                     },
                     submitHandler: function(form){
                         //Aqui pega o formulário e o converte em JSON
@@ -98,11 +101,11 @@
 <body>
     <!--Menu Superior-->
     <nav class="navbar navbar-inverse">
-            <!--Irá ocupar 2 colunas-->
-            <div class="col-md-2">
-                <!--Link para Home-->
-                <h3 style="color: white">Home</h3>
-            </div>
+            <ul class="nav nav-pills"> <!--Menu Superior-->
+                <li role="presentation"><a href="./index.html">Home</a></li>  <!--Home-->
+                <li role="presentation" class="active"><a href="./cadastro.html">Cadastro</a></li>  <!--Vai para cadastro-->
+                <li role="presentation"><a href="#">Empresa</a></li>  <!--Cadastro Empresa-->
+            </ul>
     </nav>
 
     <div class="container" style="background-color: gold">
